@@ -11,7 +11,11 @@ const forecast = (latitude, longitude, callback) => {
       const currently = body.currently;
       callback(
         null,
-        `${currently.summary}. It is currently ${currently.temperature} degrees out. Humidity is ${currently.humidity}, Wind Speed is ${currently.windSpeed}`
+        `${body.daily.summary} It is currently ${
+          currently.temperature
+        } degrees out. Humidity is ${currently.humidity * 100}%, Wind Speed is ${
+          currently.windSpeed
+        }`
       );
     }
   });
